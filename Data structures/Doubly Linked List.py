@@ -99,3 +99,35 @@ class DoublyLinkedList:
             node.next.prev = node.prev
         node.prev = None
         node.next = None
+
+    def printVal(self):
+        start = self.head
+        if start is None:
+            print("The linked list is empty")
+            return
+        while start is not None:
+            print(start.value)
+            start = start.next
+
+
+DLL = DoublyLinkedList()
+# DLL.printVal()
+Node1 = Node("Tues")
+DLL.setHead(Node1)
+
+Node2 = Node("Wed")
+DLL.insertAfter(Node1, Node2)
+
+Node3 = Node("Mon")
+DLL.insertBefore(Node1, Node3)
+
+Node4 = Node("Fri")
+DLL.setTail(Node4)
+
+Node5 = Node("Thurs")
+DLL.insertAtPosition(4, Node5)
+
+DLL.remove(Node4)
+DLL.removeNodeWithValue("Thurs")
+print(DLL.containsNodeWithValue("Mon"))
+DLL.printVal()
