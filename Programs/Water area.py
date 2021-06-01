@@ -13,6 +13,7 @@ def waterArea(array):
 
     totalCapacity = 0
     finalMax = [0] * len(array)
+    print(leftMax, rightMax)
 
     for i in range(len(array)):
         minHeight = min(leftMax[i], rightMax[i])
@@ -21,8 +22,8 @@ def waterArea(array):
             totalCapacity += finalMax[i]
         else:
             finalMax[i] = 0
-    print(totalCapacity)
-    return finalMax
+
+    return totalCapacity
 
 
-print(waterArea([0, 8, 0, 0, 5, 0, 0, 10, 0, 0, 1, 1, 0, 3]))
+print(waterArea([0,1,0,2,1,0,1,3,2,1,2,1]))
